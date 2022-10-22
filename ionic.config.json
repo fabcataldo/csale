@@ -1,0 +1,7 @@
+{
+  "name": "csaleapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
