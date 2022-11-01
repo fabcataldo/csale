@@ -1,7 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import * as Mapboxgl from 'mapbox-gl';
-import * as MapboxGeocoder from 'mapbox-gl-geocoder';
 import { environment } from 'src/environments/environment';
+import {HttpClient} from "@angular/common/http";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +14,15 @@ export class MapCustomService {
   style = 'mapbox://styles/mapbox/streets-v11';
   geocoder;
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.mapbox.accessToken = environment.mapboxKey;
   }
 
   buildMap(): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
-        // (Mapboxgl as any).accessToken = environment.mapboxKey;
         this.map = new Mapboxgl.Map({
           container: 'map', // container ID
-          // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
           style: 'mapbox://styles/mapbox/streets-v11', // style URL
           center: [-64.1915012, -31.4265492], // starting position [lNG, lat]
           zoom: 15.25 // starting zoom,
@@ -38,42 +37,28 @@ export class MapCustomService {
           trackUserLocation: true
         }));
 
-        this.geocoder = new MapboxGeocoder({
-          accessToken: environment.mapboxKey,
-          mapboxgl: Mapboxgl,
-          placeholder: '¿A donde queres ir hoy?'
-        });
-
-        this.geocoder.on('result', ($event) => {
-          const { result } = $event;
-          // geocoder.clear();
-          console.log('result: ', result);
-          this.geocoderAddressChange.emit(result);
-        })
-
 
         resolve({
           map: this.map,
-          geocoder: this.geocoder
         });
-        // this.map.on('click', (event) => {
-        //   const coordinates = [event.lngLat.lng, event.lngLat.lat];
-        // });
-        // this.map.addControl(geocoder);
       } catch (error) {
         reject(error);
       }
     })
   }
 
-  addMarker(coords): any {
+  addMarker(coords: [number, number]): any {
     console.log('----->', coords)
     const el = document.createElement('div');
     el.className = 'marker';
 
     const variable = new Mapboxgl.Marker().setLngLat(coords).addTo(this.map);
-    // variable.remove();
+    this.map.setCenter(coords);
     return variable;
+  }
+
+  findPlace(place: string): Observable<any>{
+    return this.httpClient.get<any>('https://api.mapbox.com/geocoding/v5/mapbox.places/jhonny%20b.%20good%20cordoba.json?access_token=pk.eyJ1IjoiZmFiYzIwMjEiLCJhIjoiY2trMnFiZno2MTNucDJ2dDFzZXlnYjVxaCJ9.JjoFFJseYMFqAmZ54IPo_Q&country=AR')
   }
   
 }
