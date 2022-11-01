@@ -4,10 +4,6 @@
   </ion-toolbar>
 </ion-header>
 
-<div id="geocoder" #asGeoCoder class="geocoder"></div>
-
-
-  <div id="map">
-
-  </div>
-
+<app-csale-searchbar (searchValue)="onSearchbarChange($event)"></app-csale-searchbar>
+<div id="map">
+</div>

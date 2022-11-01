@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -7,15 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { PlacesMapPageRoutingModule } from './places-map-routing.module';
 
 import { PlacesMapPage } from './places-map.page';
-  
+import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-common-components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PlacesMapPageRoutingModule
+    PlacesMapPageRoutingModule,
+    CSaleCommonComponentsModule,
   ],
   declarations: [PlacesMapPage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: []
 })
 export class PlacesMapPageModule {}
