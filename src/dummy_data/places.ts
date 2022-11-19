@@ -9,8 +9,9 @@ export const places = [
         lng: -31.423941,
         social_media_urls: ['https://www.instagram.com/jbgcordoba/?hl=es'],
         available_payment_methods: [1, 2],
-        customer_service_schedules: [1, 2, 3,4],
-        images: []
+        customer_service_schedules: [0, 1, 2],
+        images: [],
+        tag: "party"
     }
 
 
