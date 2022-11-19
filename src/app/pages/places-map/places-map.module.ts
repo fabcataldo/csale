@@ -8,6 +8,7 @@ import { PlacesMapPageRoutingModule } from './places-map-routing.module';
 
 import { PlacesMapPage } from './places-map.page';
 import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-common-components.module';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-com
     IonicModule,
     PlacesMapPageRoutingModule,
     CSaleCommonComponentsModule,
+    GoogleMapsModule,
   ],
   declarations: [PlacesMapPage],
   providers: []

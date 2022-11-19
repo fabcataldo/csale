@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>places-map</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+    <!-- <app-csale-searchbar #search placeholder="¿A donde querés salir hoy?" (onSearchChange)="onSearchInputChange($event)"
+        [searchValue]="this.mapStateService.currentSearch"></app-csale-searchbar> -->
 
-<app-csale-searchbar (searchValue)="onSearchbarChange($event)"></app-csale-searchbar>
-<div id="map">
-</div>
+        <input type="text" class="my-search-box" (keydown.enter)="$event.preventDefault()" placeholder="Search Location"
+        type="text" #search  />
+    <google-map #myGoogleMap height="430px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
+      (mapClick)="eventHandler($event,'mapClick')" (mapDblclick)="eventHandler($event,'mapDblclick')"
+      (mapDrag)="eventHandler($event,'mapDrag')" (mapDragend)="eventHandler($event,'mapDragend')"
+      (mapRightclick)="eventHandler($event,'mapRightclick')"
+      (positionChanged)="eventHandler($event,'marker_positionChanged')"
+      (zoomChanged)="eventHandler($event,'zoomChanged')">
+  
+      <map-marker #markerElem="mapMarker" *ngFor="let marker of markers" [position]="marker.position"
+        [label]="marker.label" [title]="marker.title" [options]="marker.options"
+        (mapDrag)="eventHandler($event,'mapDragMarker')" (mapDragend)="eventHandler($event,'mapDragend')">
+      </map-marker>
+  
+    </google-map>
+  
+    <h6 *ngIf="address">{{address}}</h6>
+  </ion-content>
