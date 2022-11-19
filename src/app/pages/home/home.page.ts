@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,8 +9,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {
-
+  constructor(private route: Router) {
+    this.route.navigate(['/special-tabs/events-for-you']);
   }
 
 }
