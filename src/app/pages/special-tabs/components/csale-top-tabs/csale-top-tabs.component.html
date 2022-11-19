@@ -1,18 +1,16 @@
-<ion-tabs style="
-  height: 55px;width: 100%;
-  ">
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="schedule">
-      <!-- <ion-icon name="calendar"></ion-icon> -->
-      <ion-label>Salidas para vos</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="schedule">
-      <!-- <ion-icon name="calendar"></ion-icon> -->
-      <ion-label>Eventos</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="schedule">
-      <!-- <ion-icon name="calendar"></ion-icon> -->
-      <ion-label>Lugares</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<div style="
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    align-items: center;
+">
+  <div (click)="router.navigate(['special-tabs/events-for-you'])">
+    Salidas para vos
+  </div>
+  <div (click)="router.navigate(['special-tabs/events'])">
+    Eventos
+  </div>
+  <div (click)="router.navigate(['special-tabs/places'])">
+    Lugares
+  </div>
+</div>
