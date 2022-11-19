@@ -1,0 +1,9 @@
+ion-button {
+    --border-radius: 10px;
+    --border-color: var(--button-color);
+    --background: white;
+    --color: var(--outlined-button-text);
+    --border-width: 1px;
+    --border-style: solid;
+    text-transform: none;
+}
