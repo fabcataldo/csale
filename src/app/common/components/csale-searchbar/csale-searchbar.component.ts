@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./csale-searchbar.component.scss'],
 })
 export class CSaleSearchbarComponent implements OnInit {
-  @Output() searchValue = new EventEmitter<string>();
+  @Output() onSearchChange = new EventEmitter<string>();
+  @Input() placeholder: string;
+  @Input() searchValue: string;
   constructor() { }
 
   ngOnInit() {}
