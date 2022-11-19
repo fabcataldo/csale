@@ -1,6 +1,10 @@
 <ion-header>
+  <app-csale-searchbar #search placeholder="¿A donde querés salir hoy?" (onSearchChange)="onSearchInputChange($event)">
+  </app-csale-searchbar>
   <app-csale-top-tabs></app-csale-top-tabs>
 </ion-header>
+
+<app-csale-pair-fixed-buttons></app-csale-pair-fixed-buttons>
 
 <ion-content>
   <router-outlet></router-outlet>

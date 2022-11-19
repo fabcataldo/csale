@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SpecialTabsPage } from './special-tabs.page';
 import { TabEventsPage } from './tab-events/tab-events.page';
 import { TabPlacesPage } from './tab-places/tab-places.page';
-import { TabTypeEventsForYouPage } from './tab-type-events-for-you/tab-type-events-for-you.page';
+import { TabEventsForYouPage } from './tab-events-for-you/tab-events-for-you.page';
 
 const routes: Routes = [
   {
@@ -13,15 +13,15 @@ const routes: Routes = [
     children: [
       {
         path: 'events-for-you',
-        component: TabTypeEventsForYouPage,
+        loadChildren: () => import('./tab-events-for-you/tab-events-for-you.module').then( m => m.TabTypeEventsForYouPageModule)
       },
       {
         path: 'places',
-        component: TabPlacesPage,
+        loadChildren: () => import('./tab-places/tab-places.module').then( m => m.TabPlacesPageModule)
       },
       {
         path: 'events',
-        component: TabEventsPage,
+        loadChildren: () => import('./tab-events/tab-events.module').then( m => m.TabEventsPageModule)
       },
     ]
   }
