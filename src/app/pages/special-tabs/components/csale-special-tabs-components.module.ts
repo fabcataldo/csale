@@ -1,17 +1,17 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { CSaleTopTabsModule } from './csale-top-tabs/csale-top-tabs.component.module';
 import { CSaleTopTabsComponent } from './csale-top-tabs/csale-top-tabs.component';
+import { CSaleGridCardsComponent } from './csale-grid-cards/csale-grid-cards.component';
+import { CSalePairFixedButtonsComponent } from './csale-pair-fixed-buttons/csale-pair-fixed-buttons.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    IonicModule,
-    CSaleTopTabsModule
+    IonicModule
   ],
-  declarations: [CSaleTopTabsComponent],
-  exports: [CSaleTopTabsComponent]
+  declarations: [CSaleTopTabsComponent, CSaleGridCardsComponent, CSalePairFixedButtonsComponent],
+  exports: [CSaleTopTabsComponent, CSaleGridCardsComponent, CSalePairFixedButtonsComponent]
 })
 export class CSaleSpecialTabsComponentsModule {}
