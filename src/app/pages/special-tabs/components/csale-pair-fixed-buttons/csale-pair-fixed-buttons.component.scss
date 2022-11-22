@@ -6,4 +6,9 @@ ion-button {
     --border-width: 1px;
     --border-style: solid;
     text-transform: none;
+
+    i {
+        padding-right: 5px;
+        color: var(--button-color);
+    }
 }
