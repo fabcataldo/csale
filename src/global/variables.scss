@@ -2,7 +2,10 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
-:root {
+:root { 
+  --app-header-height: 56px;
+  --app-top-tabs-height: 55px;
+  --internal-page-top-tabs-height: --app-header-height + --app-top-tabs-height;
   --button-color: var(--blue-violet);
   --outlined-button-text: var(--black);
   --button-height: 35px;

@@ -1,6 +1,6 @@
 @import "../../../../../global/global.scss";
 
 ion-tabs {
-    height: $app-top-tabs-height;
+    height: --app-top-tabs-height;
     width: 100%;
 }
