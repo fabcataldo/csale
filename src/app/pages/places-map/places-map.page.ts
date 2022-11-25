@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, NgZone, OnInit, ViewChild } from '@angular/core';
-import { MapStateService } from 'src/app/services/map-state/map-state.service';
 import {
   GoogleMap,
   MapInfoWindow,
@@ -33,10 +32,10 @@ export class PlacesMapPage implements OnInit {
     mapTypeId: 'hybrid',
   };
   markers = [] as any;
-  constructor( private ngZone: NgZone, private geoCoder: MapGeocoder) { }
+  constructor(private ngZone: NgZone, private geoCoder: MapGeocoder) { }
 
-  onSearchInputChange(event){
-    console.log('event') 
+  onSearchInputChange(event) {
+    console.log('event')
     console.log(event.detail.value)
     console.log('this.searchElementRef')
     console.log(this.searchElementRef)
@@ -60,7 +59,7 @@ export class PlacesMapPage implements OnInit {
           return;
         }
 
-        console.log({ place }, place.geometry.location?.lat(),  place.geometry.location?.lng());
+        console.log({ place }, place.geometry.location?.lat(), place.geometry.location?.lng());
 
         //set latitude, longitude and zoom
         this.latitude = place.geometry.location?.lat();
