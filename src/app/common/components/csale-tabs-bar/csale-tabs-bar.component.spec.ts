@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { CSaleTabsBarComponent } from './csale-tabs-bar.component';
 
-import { CSaleTopTabsComponent } from './csale-top-tabs.component';
-
-describe('CSaleTopTabsComponent', () => {
-  let component: CSaleTopTabsComponent;
-  let fixture: ComponentFixture<CSaleTopTabsComponent>;
+describe('CSaleTabsBarComponent', () => {
+  let component: CSaleTabsBarComponent;
+  let fixture: ComponentFixture<CSaleTabsBarComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CSaleTopTabsComponent ],
+      declarations: [ CSaleTabsBarComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CSaleTopTabsComponent);
+    fixture = TestBed.createComponent(CSaleTabsBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CSaleTopTabsComponent } from './csale-top-tabs.component';
+import { CSaleTabsBarComponent } from './csale-tabs-bar.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CSaleTopTabsComponent,
+    component: CSaleTabsBarComponent,
   }
 ];
 
@@ -13,5 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CSaleTopTabsRoutingModule {}
+export class CSaleTabsBarRoutingModule {}
 

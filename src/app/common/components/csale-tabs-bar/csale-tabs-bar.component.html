@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngFor="let tab of tabs; let i = index" (click)="navigateTo(tab, i)"
+    [class.selected-tab]="selectedTab.id === i">
+    <ng-template [ngIf]="tab.label" [ngIfElse]="tabIcon">
+      <div>
+        {{tab.label}}
+      </div>
+    </ng-template>
+    <ng-template #tabIcon>
+      <div class="tab-icon" [inlineSVG]="tab.icon"></div>
+    </ng-template>
+  </div>
+</div>

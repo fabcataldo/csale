@@ -1,0 +1,19 @@
+@import "../../../../global/global.scss";
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+    align-items: center;
+}
+
+.selected-tab {
+    border-bottom: 2px solid var(--button-color);
+    font-weight: 600;
+}
+
+.tab-icon {
+    width: 20px;
+    height: 20px;
+    fill: #5E00E5;
+}
