@@ -18,3 +18,10 @@
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
 
+ion-title {
+    color: var(--blue-violet);
+}
+
+ion-back-button {
+    --color: var(--blue-violet);
+}
