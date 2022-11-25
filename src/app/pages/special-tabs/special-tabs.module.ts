@@ -8,7 +8,6 @@ import { SpecialTabsPageRoutingModule } from './special-tabs-routing.module';
 
 import { SpecialTabsPage } from './special-tabs.page';
 import { CSaleSpecialTabsComponentsModule } from './components/csale-special-tabs-components.module';
-import { CSaleTopTabsRoutingModule } from './components/csale-top-tabs/csale-top-tabs-routing.module';
 import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-common-components.module';
 
 @NgModule({
@@ -18,9 +17,8 @@ import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-com
     IonicModule,
     SpecialTabsPageRoutingModule,
     CSaleSpecialTabsComponentsModule,
-    CSaleTopTabsRoutingModule,
     CSaleCommonComponentsModule
   ],
-  declarations: [SpecialTabsPage]
+  declarations: [SpecialTabsPage],
 })
 export class SpecialTabsPageModule {}
