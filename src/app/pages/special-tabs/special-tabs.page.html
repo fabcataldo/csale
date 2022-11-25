@@ -1,7 +1,7 @@
 <ion-header>
   <app-csale-searchbar #search placeholder="¿A donde querés salir hoy?" (onSearchChange)="onSearchInputChange($event)">
   </app-csale-searchbar>
-  <app-csale-top-tabs></app-csale-top-tabs>
+  <app-csale-tabs-bar [tabs]="bottomCompStateService.topTabs" [defaultSelectedTab]=0></app-csale-tabs-bar>
 </ion-header>
 
 <app-csale-pair-fixed-buttons></app-csale-pair-fixed-buttons>

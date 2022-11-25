@@ -1,7 +1,10 @@
+@import "../../../global/global.scss";
+
 app-csale-pair-fixed-buttons {
     position: fixed;
     z-index: 1;
-    bottom: 1px;
+    bottom: 46px;
     text-align: center;
     width: 100%;
+    background: white;
 }
