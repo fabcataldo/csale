@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BottomComponentsStateService } from './services/bottom-components-state/bottom-components-state.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor( public bottomCompStateService: BottomComponentsStateService) {}
 }

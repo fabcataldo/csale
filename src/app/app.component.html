@@ -1,3 +1,8 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
+  <ion-footer>
+    <app-csale-tabs-bar id="bottomTabs" [tabs]="bottomCompStateService.bottomTabs" [defaultSelectedTab]=2>
+    </app-csale-tabs-bar>
+  </ion-footer>
 </ion-app>
+
