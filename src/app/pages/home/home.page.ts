@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { BottomComponentsStateService } from 'src/app/services/bottom-components-state/bottom-components-state.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private route: Router) {
+  constructor(private route: Router, public bottomCompStateService: BottomComponentsStateService) {
     this.route.navigate(['/special-tabs/events-for-you']);
   }
 
