@@ -1,0 +1,40 @@
+app-csale-pair-fixed-buttons {
+    position: fixed;
+    z-index: 1;
+    bottom: 46px;
+    text-align: center;
+    width: 100%;
+    background: white;
+}
+
+.occupation-icon {
+    width: 20px;
+    height: 20px;
+    fill: red;
+}
+
+.place-img {
+    width: 50px;
+    height: 50px;
+}
+
+.heart-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.quantity-places {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.place-name {
+    font-weight: bold;
+}
+
+.place-container {
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: space-evenly;
+}

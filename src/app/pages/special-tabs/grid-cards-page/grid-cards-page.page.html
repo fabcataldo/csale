@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="special-tabs/events-for-you"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<app-csale-searchbar #search placeholder="¿A donde querés salir hoy?" (onSearchChange)="onSearchInputChange($event)">
+</app-csale-searchbar>
+<app-csale-pair-fixed-buttons></app-csale-pair-fixed-buttons>
+
+<ion-content>
+  <ion-item>
+    <div class="quantity-places">{{placesManagementStateService.currentPlaces.length | csalePipe:getPlacesListTitle}}</div>
+  </ion-item>
+
+  <ion-list>
+    <div *ngFor="let place of searchInput | csalePipe:getPlaceList:placesManagementStateService.currentPlaces" style="display: flex;     justify-content: space-around;">
+      <div class="place-img" inlineSVG="assets/imgs/boliche.svg"></div>
+      <div class="place-container">
+        <div class="place-name">{{place.place.name}}</div>
+        <div>{{place.currentOpeningState.is_open | csalePipe:getOpenningStatus}}</div>
+        <div style="display: flex;">
+          <div class="heart-icon" inlineSVG="assets/imgs/circle-color.svg"></div>
+          <div>{{place.currentOpeningState.occupation_level | csalePipe:getOccupationLevelName }}</div>
+        </div>
+      </div>
+      <div class="heart-icon" inlineSVG="assets/imgs/heart.svg"></div>
+    </div>
+
+  </ion-list>
+</ion-content>
