@@ -10,4 +10,5 @@ export class PlacesManagementStateService {
   //para mandarlas al mapa, cuando se detecte el click del boton "Mapa"
   //cuando el usuario esté en una de las pags de las cards del inicio de special-tabs
   currentPlaces: Array<CurrentPlace> = [];
+  currentPlace: CurrentPlace;
 }
