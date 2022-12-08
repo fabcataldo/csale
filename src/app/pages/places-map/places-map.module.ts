@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PlacesMapPageRoutingModule } from './places-map-routing.module';
 
 import { PlacesMapPage } from './places-map.page';
-import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-common-components.module';
+import { CSaleCommonComponentsModule } from 'src/app/common/csale-common-components.module';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
