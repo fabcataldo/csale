@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'places-map',
     loadChildren: () => import('./pages/places-map/places-map.module').then( m => m.PlacesMapPageModule)
   },
+  {
+    path: 'places-map/:tag',
+    loadChildren: () => import('./pages/places-map/places-map.module').then( m => m.PlacesMapPageModule)
+  },
 ];
 
 @NgModule({
