@@ -59,7 +59,7 @@ export const places = [
         number_of_people_enabled: 300,
         lat: -64.187216,
         lng: -31.423941,
-        social_media_urls: [],
+        social_media_urls: ['https://es-la.facebook.com/LaBarraBolicheCordoba/', 'https://www.instagram.com/labarraboliche/?hl=es'],
         available_payment_methods: [1, 2],
         customer_service_schedules: [
             {day: 4, hours: ['7:30', '6:00']},
