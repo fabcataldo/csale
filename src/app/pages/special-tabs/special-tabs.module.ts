@@ -8,7 +8,8 @@ import { SpecialTabsPageRoutingModule } from './special-tabs-routing.module';
 
 import { SpecialTabsPage } from './special-tabs.page';
 import { CSaleSpecialTabsComponentsModule } from './components/csale-special-tabs-components.module';
-import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-common-components.module';
+import { CSaleCommonComponentsModule } from 'src/app/common/csale-common-components.module';
+import { InlineSVGModule } from 'ng-inline-svg-2';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { CSaleCommonComponentsModule } from 'src/app/common/components/csale-com
     IonicModule,
     SpecialTabsPageRoutingModule,
     CSaleSpecialTabsComponentsModule,
-    CSaleCommonComponentsModule
+    CSaleCommonComponentsModule,
+    InlineSVGModule.forRoot()
   ],
   declarations: [SpecialTabsPage],
 })
