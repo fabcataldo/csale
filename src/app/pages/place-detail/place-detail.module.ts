@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { PlaceDetailPageRoutingModule } from './place-detail-routing.module';
 
 import { PlaceDetailPage } from './place-detail.page';
+import { InlineSVGModule } from 'ng-inline-svg-2';
+import { CSaleCommonComponentsModule } from 'src/app/common/csale-common-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PlaceDetailPageRoutingModule
+    PlaceDetailPageRoutingModule,
+    InlineSVGModule.forRoot(),
+    CSaleCommonComponentsModule
   ],
   declarations: [PlaceDetailPage]
 })

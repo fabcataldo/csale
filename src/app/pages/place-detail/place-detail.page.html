@@ -1,9 +1,47 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>place-detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="special-tabs/events-for-you"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle de lugar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card style="    color: black; text-align: center;">
+    <div style="height: 8rem;">
+      <img style="width: 100%; height: 8rem;" src="assets/imgs/boliche2.jpg">
+      <div style="width: 40px; height:40px;
+        position: relative;
+        bottom: 120px;
+        left: 323px;
+      " inlineSVG="assets/imgs/share.svg"></div>
+      <div class="heart-icon" inlineSVG="assets/imgs/heart.svg"></div>
+    </div>
+    <div 
+    style="
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0px;
+    "
+    >{{currentPlace.place.name}}</div>
+    <div>{{currentPlace.currentOpeningState.is_open | csalePipe:getOpenningStatus}}</div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <div class="occupation-level-icon" inlineSVG="assets/imgs/circle-color.svg" [style.fill]="getColorOccupationLevel(currentPlace.currentOpeningState.occupation_level)"></div>
+      <div class="occupation-level-name">{{currentPlace.currentOpeningState.occupation_level | csalePipe:getOccupationLevelName }}</div>
+    </div>
+    <div class="occupation-level-name">{{currentPlace.place.address}}</div>
+    <div style="display: flex; align-items: center; justify-content: center;" *ngIf="currentPlace.place.social_media_urls.length">
+      <ng-template [ngIf]="currentPlace.place.social_media_urls[0]">
+        <div inlineSVG="assets/imgs/facebook.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[0])"></div>
+      </ng-template>
+      <ng-template [ngIf]="currentPlace.place.social_media_urls[1]">
+        <div inlineSVG="assets/imgs/instagram.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[1])"></div>
+      </ng-template>
+    </div>
+  </ion-card>
+  <div>
+    <ion-button (click)="onMapButtonClicked($event)">Ver horarios</ion-button>
+  </div>
 
 </ion-content>
