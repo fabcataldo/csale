@@ -17,6 +17,10 @@
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
+@font-face {   
+    font-family: 'Roboto';    //This is what we are going to call
+    src: url('../assets/fonts/roboto/Roboto-Regular.ttf');
+  }
 
 ion-title {
     color: var(--blue-violet);
@@ -24,4 +28,8 @@ ion-title {
 
 ion-back-button {
     --color: var(--blue-violet);
+}
+
+:host {
+    font-family: 'Roboto';
 }
