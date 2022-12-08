@@ -12,11 +12,6 @@ export class SpecialTabsPage {
   constructor( public bottomCompStateService: BottomComponentsStateService) { }
 
 
-  onSearchInputChange(event){
-    console.log('event')
-    console.log(event)
-
-  }
 
 
 }
