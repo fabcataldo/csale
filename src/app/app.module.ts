@@ -7,7 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CSaleCommonComponentsModule } from './common/components/csale-common-components.module';
+import { CSaleCommonComponentsModule } from './common/csale-common-components.module';
 
 @NgModule({
   declarations: [AppComponent],
