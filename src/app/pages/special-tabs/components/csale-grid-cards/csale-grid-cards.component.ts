@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-csale-grid-cards',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CSaleGridCardsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  goToCardPage(tag) {
+    this.router.navigate([`/special-tabs/grid-cards-page/${tag}`]);
+  }
 
 }
