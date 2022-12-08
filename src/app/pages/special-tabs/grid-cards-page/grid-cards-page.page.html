@@ -12,23 +12,20 @@
 <app-csale-pair-fixed-buttons></app-csale-pair-fixed-buttons>
 
 <ion-content>
-  <ion-item>
-    <div class="quantity-places">{{placesManagementStateService.currentPlaces.length | csalePipe:getPlacesListTitle}}</div>
-  </ion-item>
+  <div class="quantity-places">{{placesManagementStateService.currentPlaces.length | csalePipe:getPlacesListTitle}}</div>
 
-  <ion-list>
-    <div *ngFor="let place of searchInput | csalePipe:getPlaceList:placesManagementStateService.currentPlaces" style="display: flex;     justify-content: space-around;">
+  <div>
+    <div class="list-item" *ngFor="let place of searchInput | csalePipe:getPlaceList:placesManagementStateService.currentPlaces" (click)="goToDetailPlace(place)">
       <div class="place-img" inlineSVG="assets/imgs/boliche.svg"></div>
       <div class="place-container">
         <div class="place-name">{{place.place.name}}</div>
         <div>{{place.currentOpeningState.is_open | csalePipe:getOpenningStatus}}</div>
-        <div style="display: flex;">
-          <div class="heart-icon" inlineSVG="assets/imgs/circle-color.svg"></div>
-          <div>{{place.currentOpeningState.occupation_level | csalePipe:getOccupationLevelName }}</div>
+        <div style="display: flex; align-items: center;">
+          <div class="occupation-level-icon" inlineSVG="assets/imgs/circle-color.svg" [style.fill]="getColorOccupationLevel(place.currentOpeningState.occupation_level)"></div>
+          <div class="occupation-level-name">{{place.currentOpeningState.occupation_level | csalePipe:getOccupationLevelName }}</div>
         </div>
       </div>
       <div class="heart-icon" inlineSVG="assets/imgs/heart.svg"></div>
     </div>
-
-  </ion-list>
+  </div>
 </ion-content>

@@ -19,7 +19,7 @@ import { InlineSVGModule } from 'ng-inline-svg-2';
     GridCardsPagePageRoutingModule,
     CSaleSpecialTabsComponentsModule,
     CSaleCommonComponentsModule,
-    InlineSVGModule.forRoot()
+    InlineSVGModule.forRoot(),
   ],
   declarations: [GridCardsPagePage]
 })

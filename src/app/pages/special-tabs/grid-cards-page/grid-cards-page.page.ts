@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CurrentPlace } from 'src/app/models/currentPlaces';
 import { Place } from 'src/app/models/place';
+import { getColorOccupationLevel } from 'src/app/utils/getColorOccupationLevel';
+import { getOccupationLevelName } from 'src/app/utils/getOccupationLevelName';
 import { opening_state_place } from 'src/dummy_data/opening_state_place';
 import { places } from 'src/dummy_data/places';
 import { PlacesManagementStateService } from '../services/places-management-state/places-management-state.service';
@@ -17,8 +20,12 @@ export class GridCardsPagePage implements OnInit {
   searchInput = '';
   constructor(
     private route: ActivatedRoute,
-    private placesManagementStateService: PlacesManagementStateService
+    private placesManagementStateService: PlacesManagementStateService,
+    private router: Router
   ) { }
+
+  getOccupationLevelName = getOccupationLevelName;
+  getColorOccupationLevel = getColorOccupationLevel;
 
   ngOnInit() {
     let findPlaces = places.filter(place => place.tags.find(tag => tag === this.route.snapshot.params.tag));
@@ -58,21 +65,7 @@ export class GridCardsPagePage implements OnInit {
 
   //capturo el evento, y filtro los places que voy a mostrar en el html
   onSearchInputChange(event) {
-    console.log('event')
-    console.log(event)
     this.searchInput = event.detail.value;
-  }
-
-  getOccupationLevelName = (occupationLevel) => {
-    if (occupationLevel === 'low') {
-      return 'Ocupación baja';
-    } else {
-      if (occupationLevel === 'moderate') {
-        return 'Ocupación media';
-      } else {
-        return 'Ocupación alta';
-      }
-    }
   }
 
   getOpenningStatus = (isOpen) => {
@@ -81,5 +74,10 @@ export class GridCardsPagePage implements OnInit {
 
   getPlacesListTitle = (places) => {
     return places > 1 ? `${places} lugares` : `${places} lugar`;
+  }
+
+  goToDetailPlace(place: CurrentPlace){
+    this.placesManagementStateService.currentPlace = place;
+    this.router.navigateByUrl('/place-detail', {replaceUrl:true});
   }
 }

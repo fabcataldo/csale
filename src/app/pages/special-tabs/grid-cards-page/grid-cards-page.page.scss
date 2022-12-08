@@ -23,9 +23,15 @@ app-csale-pair-fixed-buttons {
     height: 20px;
 }
 
+.occupation-level-icon{
+    width: 25px;
+    height: 25px;
+}
+
 .quantity-places {
     font-weight: bold;
     font-size: 18px;
+    padding: 10px 0px 0px 10px;
 }
 
 .place-name {
@@ -37,4 +43,15 @@ app-csale-pair-fixed-buttons {
     flex-direction: column;
     height: 4rem;
     justify-content: space-evenly;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.occupation-level-name {
+    padding-left: 5px;
 }
