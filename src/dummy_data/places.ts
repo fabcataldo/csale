@@ -2,8 +2,6 @@
 // special-lunch estos tags es para ver a qué card pertenecen, de la pantalla de inicio, 
 // de “salidas para vos”
 
-import { Ticket } from "src/app/models/ticket";
-
 export const places = [
     {
         _id: 0,
@@ -26,7 +24,8 @@ export const places = [
             {day: 7, hours: ['7:30', '1:00']},
         ],
         images: [],
-        tags: ["special-lunch", "special-dinner"]
+        tags: ["special-lunch", "special-dinner"],
+        experiences: []
     },
     {
         _id: 1,
@@ -49,7 +48,8 @@ export const places = [
             {day: 7, hours: ['7:30', '1:00']},
         ],
         images: [],
-        tags: ["special-lunch", "special-dinner"]
+        tags: ["special-lunch", "special-dinner"],
+        experiences: []
     },
     {
         _id: 2,
@@ -67,7 +67,8 @@ export const places = [
             {day: 6, hours: ['22:30', '6:00']},
         ],
         images: [],
-        tags: ["party"]
+        tags: ["party"],
+        experiences: [0, 1, 2]
     },
 
 ]

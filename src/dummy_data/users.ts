@@ -15,7 +15,7 @@ export const users = [
     {
         _id: 1,
         tickets: [],
-        experiences: [],
+        experiences: [1,2],
         name: 'Pepe',
         surname: 'Martinez',
         email: 'pepem@gmail.com',
