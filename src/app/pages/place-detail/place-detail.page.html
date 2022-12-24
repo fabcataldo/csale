@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="height: calc(100% - 45px);">
   <ion-card style="    color: black; text-align: center;">
     <div style="height: 8rem;">
       <img style="width: 100%; height: 8rem;" src="assets/imgs/boliche2.jpg">
@@ -33,15 +33,66 @@
     <div class="occupation-level-name">{{currentPlace.place.address}}</div>
     <div style="display: flex; align-items: center; justify-content: center;" *ngIf="currentPlace.place.social_media_urls.length">
       <ng-template [ngIf]="currentPlace.place.social_media_urls[0]">
-        <div inlineSVG="assets/imgs/facebook.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[0])"></div>
+        <div 
+        style="
+        width: 40px;
+    height: 40px;
+    "
+        inlineSVG="assets/imgs/facebook.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[0])"></div>
       </ng-template>
       <ng-template [ngIf]="currentPlace.place.social_media_urls[1]">
-        <div inlineSVG="assets/imgs/instagram.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[1])"></div>
+        <div 
+        style="
+        width: 40px;
+    height: 40px;
+    "
+        inlineSVG="assets/imgs/instagram.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[1])"></div>
       </ng-template>
     </div>
   </ion-card>
   <div>
-    <ion-button (click)="onMapButtonClicked($event)">Ver horarios</ion-button>
+    <ion-button>Ver horarios</ion-button>
   </div>
+  <br>
+  <div
+  style="
+    font-size: 16px;
+    font-weight: 700;
+  "
+  >
+    ¿Qué dice la gente sobre el lugar?
+  </div>
+
+  <div  style="    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  ">
+    <div *ngFor="let userExp of userPlaceExp">
+      <div *ngFor="let exp of userExp.experiences">
+        <ion-card
+        style="
+          width: 16.5rem;
+          height: 12rem;
+        "
+        >
+          <div>
+            {{userExp.user.name}} {{userExp.user.surname}}
+          </div>
+          <div>
+            {{exp.description}}
+          </div>
+          <div>
+            {{exp.qualification}}
+          </div>
+          <div>
+            {{exp.date_published}}
+          </div>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+
 
 </ion-content>
