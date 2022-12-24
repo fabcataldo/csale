@@ -13,5 +13,6 @@ export interface Place {
     available_payment_methods: Array<number>,
     customer_service_schedules: Array<CustomerServiceSchedules>,
     images: Array<string>,
-    tags: Array<string>
+    tags: Array<string>,
+    experiences: Array<number>
 }
