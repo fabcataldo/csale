@@ -1,13 +1,13 @@
-import { getCSSPropValue } from "./getCSSPropValue";
+import { getSCSSVarValue } from "./getSCSSVarValue";
 
 export const getColorOccupationLevel = (occupationLevel) => {
     if (occupationLevel === 'low') {
-      return getCSSPropValue('--green');
+      return getSCSSVarValue('--green');
     } else {
       if (occupationLevel === 'moderate') {
-        return getCSSPropValue('--orange');
+        return getSCSSVarValue('--orange');
       } else {
-        return getCSSPropValue('--red');
+        return getSCSSVarValue('--red');
       }
     }
   }
