@@ -39,6 +39,7 @@
     "cordova-plugin-firebase": "^2.0.5",
     "cordova-plugin-geolocation": "^4.1.0",
     "font-awesome": "^4.7.0",
+    "ion-rating-stars": "^1.0.0",
     "ionicons": "^6.0.3",
     "moment": "^2.29.4",
     "ng-inline-svg-2": "^15.0.0",
