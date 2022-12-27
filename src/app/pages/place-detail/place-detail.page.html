@@ -7,46 +7,43 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="height: calc(100% - 45px);">
-  <ion-card style="    color: black; text-align: center;">
+<ion-content style="height: calc(100% - 45px)">
+  <ion-card>
     <div style="height: 8rem;">
       <img style="width: 100%; height: 8rem;" src="assets/imgs/boliche2.jpg">
       <div style="width: 40px; height:40px;
         position: relative;
         bottom: 120px;
-        left: 323px;
+        left: 300px;
       " inlineSVG="assets/imgs/share.svg"></div>
       <div class="heart-icon" inlineSVG="assets/imgs/heart.svg"></div>
     </div>
-    <div 
-    style="
+    <div style="
     font-weight: bold;
     font-size: 18px;
     padding: 10px 0px;
-    "
-    >{{currentPlace.place.name}}</div>
+    ">{{currentPlace.place.name}}</div>
     <div>{{currentPlace.currentOpeningState.is_open | csalePipe:getOpenningStatus}}</div>
     <div style="display: flex; align-items: center; justify-content: center;">
-      <div class="occupation-level-icon" inlineSVG="assets/imgs/circle-color.svg" [style.fill]="getColorOccupationLevel(currentPlace.currentOpeningState.occupation_level)"></div>
-      <div class="occupation-level-name">{{currentPlace.currentOpeningState.occupation_level | csalePipe:getOccupationLevelName }}</div>
+      <div class="occupation-level-icon" inlineSVG="assets/imgs/circle-color.svg"
+        [style.fill]="getColorOccupationLevel(currentPlace.currentOpeningState.occupation_level)"></div>
+      <div class="occupation-level-name">{{currentPlace.currentOpeningState.occupation_level |
+        csalePipe:getOccupationLevelName }}</div>
     </div>
     <div class="occupation-level-name">{{currentPlace.place.address}}</div>
-    <div style="display: flex; align-items: center; justify-content: center;" *ngIf="currentPlace.place.social_media_urls.length">
+    <div style="display: flex; align-items: center; justify-content: center;"
+      *ngIf="currentPlace.place.social_media_urls.length">
       <ng-template [ngIf]="currentPlace.place.social_media_urls[0]">
-        <div 
-        style="
+        <div style="
         width: 40px;
     height: 40px;
-    "
-        inlineSVG="assets/imgs/facebook.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[0])"></div>
+    " inlineSVG="assets/imgs/facebook.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[0])"></div>
       </ng-template>
       <ng-template [ngIf]="currentPlace.place.social_media_urls[1]">
-        <div 
-        style="
+        <div style="
         width: 40px;
     height: 40px;
-    "
-        inlineSVG="assets/imgs/instagram.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[1])"></div>
+    " inlineSVG="assets/imgs/instagram.svg" (click)="goToSocialMedia(currentPlace.place.social_media_urls[1])"></div>
       </ng-template>
     </div>
   </ion-card>
@@ -54,45 +51,53 @@
     <ion-button>Ver horarios</ion-button>
   </div>
   <br>
-  <div
-  style="
+  <div style="
     font-size: 16px;
     font-weight: 700;
-  "
-  >
+  ">
     ¿Qué dice la gente sobre el lugar?
   </div>
 
-  <div  style="    display: flex;
+  <div style="    display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   ">
     <div *ngFor="let userExp of userPlaceExp">
       <div *ngFor="let exp of userExp.experiences">
-        <ion-card
-        style="
+        <ion-card style="
           width: 16.5rem;
           height: 12rem;
-        "
-        >
-          <div>
-            {{userExp.user.name}} {{userExp.user.surname}}
+          padding-top: 10px;
+          padding-left: 10px;
+          text-align:start;
+        ">
+          <div style="
+            display: flex;
+    align-items: center;
+        ">
+            <div style="
+            width: 40px;
+            height: 40px;
+            " inlineSVG="assets/imgs/user-avatar.svg">
+            </div>
+            <div style="    font-size: 16px;">
+              {{userExp.user.name}} {{userExp.user.surname}}
+            </div>
           </div>
+          <ion-rating-stars [rating]="exp.qualification" [color]=" '--blue-violet' | csalePipe:getSCSSVarValue "
+            [filledColor]=" '--blue-violet' | csalePipe:getSCSSVarValue " [size]="15"
+            [disabled]="true"></ion-rating-stars>
+
           <div>
             {{exp.description}}
           </div>
           <div>
-            {{exp.qualification}}
-          </div>
-          <div>
-            {{exp.date_published}}
+            Compartido: {{exp.date_published | csalePipe:getFormattedDate }}
           </div>
         </ion-card>
       </div>
     </div>
   </div>
-
-
 
 </ion-content>

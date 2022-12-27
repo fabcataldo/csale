@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentPlace } from 'src/app/models/currentPlaces';
 import { Experience } from 'src/app/models/experience';
-import { User } from 'src/app/models/user';
 import { ExperiencesService } from 'src/app/services/experiences/experiences.service';
 import { UsersService } from 'src/app/services/users/users.service';
 import { getColorOccupationLevel } from 'src/app/utils/getColorOccupationLevel';
 import { getOccupationLevelName } from 'src/app/utils/getOccupationLevelName';
+import { getSCSSVarValue } from 'src/app/utils/getSCSSVarValue';
 import { PlacesManagementStateService } from '../special-tabs/services/places-management-state/places-management-state.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-place-detail',
@@ -25,7 +26,11 @@ export class PlaceDetailPage implements OnInit {
   ) { }
   getOccupationLevelName = getOccupationLevelName;
   getColorOccupationLevel = getColorOccupationLevel;
+  getSCSSVarValue = getSCSSVarValue;
 
+  getFormattedDate = (date:string) => {
+    return moment(date).locale('es').format('L');
+  }
   ngOnInit() {
     this.currentPlace = this.placesManagementStateService.currentPlace;
     this.experiencesService.getExperiences().subscribe(data => {
