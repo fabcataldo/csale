@@ -9,6 +9,7 @@ import { PlaceDetailPageRoutingModule } from './place-detail-routing.module';
 import { PlaceDetailPage } from './place-detail.page';
 import { InlineSVGModule } from 'ng-inline-svg-2';
 import { CSaleCommonComponentsModule } from 'src/app/common/csale-common-components.module';
+import { IonRatingStarsModule } from 'ion-rating-stars';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { CSaleCommonComponentsModule } from 'src/app/common/csale-common-compone
     IonicModule,
     PlaceDetailPageRoutingModule,
     InlineSVGModule.forRoot(),
-    CSaleCommonComponentsModule
+    CSaleCommonComponentsModule,
+    IonRatingStarsModule
   ],
   declarations: [PlaceDetailPage]
 })
